@@ -9,18 +9,19 @@
         mc:Ignorable="d" Height="740" Width="1280" WindowStartupLocation="CenterScreen"
         WindowStyle="None" AllowsTransparency="True" Background="Transparent"
         Title="MainWindow">
+    <!-- base color: #FF0069FF-->
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        
+
         <!--Left Menu-->
         <Border CornerRadius="10 0 0 10">
             <Border.Background>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                    <GradientStop Color="DarkBlue" Offset="0"/>
-                    <GradientStop Color="LightBlue" Offset="1"/>
+                    <GradientStop Color="#FF748193" Offset="0"/>
+                    <GradientStop Color="#FF090909" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
 
@@ -30,22 +31,22 @@
                     <Border CornerRadius="10" Width="40" Height="40">
                         <Border.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                                <GradientStop Color="Purple" Offset="0"/>
-                                <GradientStop Color="GreenYellow" Offset="1"/>
+                                <GradientStop Color="OrangeRed" Offset="0"/>
+                                <GradientStop Color="Black" Offset="0.53"/>
                             </LinearGradientBrush>
                         </Border.Background>
-                        <TextBlock Text="JK" Foreground="White" FontSize="25" FontWeight="Bold"
+                        <TextBlock Text="MW" Foreground="White" FontSize="17" FontWeight="Bold"
                                    TextAlignment="Center" VerticalAlignment="Center" Margin="0 0 2 1"/>
                     </Border>
                     <StackPanel Margin="10 0 0 0" VerticalAlignment="Center">
-                        <TextBlock Text="Just Kidding" Foreground="White" FontSize="16" Margin="1 1 0 1"/>
-                        <TextBlock Text="Mate" Foreground="White" FontSize="12" Margin="1 -5 0 1"/>
+                        <TextBlock Text="Mikolaj Wroblewski" Foreground="#FFC6D7EF" FontSize="16" Margin="1 1 0 1"/>
+                        <TextBlock Text="v1.31" Foreground="#FFC6D7EF" FontSize="12" Margin="1 -5 0 1"/>
 
                     </StackPanel>
-                    
+
                 </StackPanel>
-                <Separator Height="0.2" Background="Yellow" Margin="20 30"/>
-            <!--Buttons-->
+                <Separator Height="0.2" Background="OrangeRed" Margin="20 30"/>
+                <!--Buttons-->
                 <Button Style="{StaticResource menuButtonActive}">
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="Home" Style="{StaticResource MenuButtonIcon}"/>
@@ -72,13 +73,13 @@
                 </Button>
             </StackPanel>
         </Border>
-        
+
         <!--Middle-->
         <Border Grid.Column="1" CornerRadius="0 10 10 0" MouseDown="Border_MouseDown">
             <Border.Background>
                 <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
-                    <GradientStop Color="BlueViolet" Offset="0"/>
-                    <GradientStop Color="Green" Offset="1"/>
+                    <GradientStop Color="#FF4A5565" Offset="0"/>
+                    <GradientStop Color="#FF222222" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
             <Grid>
@@ -91,14 +92,14 @@
 
                 <StackPanel Margin="0 0 30 20" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
                     <Button Content="Eat my shorts" Style="{StaticResource topMenuButton}"/>
-                    <Button Content="Day" Style="{StaticResource topMenuButton}" Background="BlanchedAlmond" Foreground="DarkMagenta"/>
+                    <Button Content="Day" Style="{StaticResource topMenuButton}" Background="#FF332621" Foreground="#FFC6D7EF"/>
                     <Button Content="month" Style="{StaticResource topMenuButton}"/>
                     <Button Content="year" Style="{StaticResource topMenuButton}"/>
                 </StackPanel>
 
                 <!--Title-->
-                <TextBlock Text="Hello there!" FontSize="27" Foreground="DeepSkyBlue" Background="IndianRed" HorizontalAlignment="Left" Margin="50 35 0 20"/>
-                
+                <TextBlock Text="Hello there!" FontSize="27" Foreground="#FFC6D7EF" HorizontalAlignment="Left" Margin="50 35 0 20"/>
+
                 <!--Info card-->
                 <Grid Grid.Row="1" Margin="50 20 15 40">
                     <Grid.ColumnDefinitions>
@@ -107,22 +108,22 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <uc:InfoUser Grid.Column="0" Title="Total Views" Number="548,654" Icon="Eye" Background1="Pink" Background2="Aqua" EllipseBackground1="GreenYellow" EllipseBackground2="OrangeRed"/>
-                    <uc:InfoUser Grid.Column="1" Title="Total orders" Number="548,654" Icon="Dragon" Background1="PeachPuff" Background2="Aqua" EllipseBackground1="GreenYellow" EllipseBackground2="Goldenrod"/>
-                    <uc:InfoUser Grid.Column="2" Title="Total revs" Number="548,654" Icon="GolfBall" Background1="red" Background2="Aqua" EllipseBackground1="Salmon" EllipseBackground2="PowderBlue"/>
+                    <uc:InfoUser Grid.Column="0" Title="Total Views" Number="548,654" Icon="Eye" Background1="#FF090909" Background2="#FF748193" EllipseBackground1="#FFF4CB54" EllipseBackground2="OrangeRed" Foreground="Black"/>
+                    <uc:InfoUser Grid.Column="1" Title="Total orders" Number="548,654" Icon="Dragon" Background1="#FF090909" Background2="#FF748193" EllipseBackground1="#FFF4CB54" EllipseBackground2="OrangeRed"/>
+                    <uc:InfoUser Grid.Column="2" Title="Total revs" Number="548,654" Icon="GolfBall" Background1="#FF090909" Background2="#FF748193" EllipseBackground1="#FFF4CB54" EllipseBackground2="OrangeRed"/>
 
                 </Grid>
 
                 <Grid Grid.Row="2">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Border CornerRadius="20" Padding="35 25" Background="LightBlue" Margin="50 0 10 40">
-                        
+                    <Border CornerRadius="20" Padding="35 25" Background="#FF748193" Margin="50 0 10 40">
+
                     </Border>
 
-                    <Border Grid.Column="1" CornerRadius="20" Padding="0 25" Background="LightBlue" Margin="15 0 47 40">
+                    <Border Grid.Column="1" CornerRadius="20" Padding="0 25" Background="#FF748193" Margin="15 0 47 40">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="auto"/>
@@ -132,7 +133,7 @@
                                 <fa:IconImage Icon="Circle" Style="{StaticResource titleIcon}"/>
                                 <TextBlock Text="Last Orders" Style="{StaticResource titleText}"/>
                             </StackPanel>
-                            
+
                             <!--Orders-->
                             <StackPanel Grid.Row="1">
                                 <uc:Order Title="Good doggo how how" Desc="Jonny b good" Icon="Dog"/>
@@ -141,8 +142,8 @@
                                 <uc:Order Title="Good doggo how how" Desc="Jonny b good" Icon="Dog"/>
                                 <uc:Order Title="Good doggo how how" Desc="Jonny b good" Icon="Dog"/>
                             </StackPanel>
-                            
-                            
+
+
                         </Grid>
 
                     </Border>
@@ -153,9 +154,9 @@
             </Grid>
 
         </Border>
-        
-        
-        
+
+
+
     </Grid>
 
 </Window>

@@ -11,19 +11,26 @@
             <Style TargetType="Border">
                 <Style.Triggers>
                     <Trigger Property="IsMouseOver" Value="True">
-                        <Setter Property="Background" Value="DeepPink"/>
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <LinearGradientBrush StartPoint="0,0.3" EndPoint="1,0.3">
+                                    <GradientStop Color="OrangeRed" Offset="0"/>
+                                    <GradientStop Color="#FFF4CB54" Offset="2"/>
+                                </LinearGradientBrush>
+                            </Setter.Value>
+                        </Setter>
                     </Trigger>
                 </Style.Triggers>
             </Style>
         </Border.Style>
         <StackPanel Orientation="Horizontal">
             <Grid Width="45" Height="45" Margin="25 0 0 0">
-                <Border CornerRadius="10" Background="DarkBlue"/>
-                <fa:IconImage Icon="{Binding Path=Icon,ElementName=order}" Foreground="LightSalmon" Width="25"/>
+                <Border CornerRadius="10" Background="black"/>
+                <fa:IconImage Icon="{Binding Path=Icon,ElementName=order}" Foreground="OrangeRed" Width="25"/>
             </Grid>
             <StackPanel Margin="10 0 0 0" VerticalAlignment="Center">
-                <TextBlock Text="{Binding Path=Title,ElementName=order}" FontSize="14" Foreground="Purple"/>
-                <TextBlock Text="{Binding Path=Desc,ElementName=order}" FontSize="11" Foreground="Purple" Margin="0 3 0 0"/>
+                <TextBlock Text="{Binding Path=Title,ElementName=order}" FontSize="14" Foreground="White"/>
+                <TextBlock Text="{Binding Path=Desc,ElementName=order}" FontSize="11" Foreground="White" Margin="0 3 0 0"/>
             </StackPanel>
         </StackPanel>
 

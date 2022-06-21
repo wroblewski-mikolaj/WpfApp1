@@ -10,7 +10,7 @@
 
         <Style x:Key="menuButton" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="Foreground" Value="LightPink"/>
+            <Setter Property="Foreground" Value="#FFC6D7EF"/>
             <Setter Property="Margin" Value="0 0 0 5"/>
             <Setter Property="Height" Value="45"/>
             <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
@@ -27,20 +27,20 @@
 
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Foreground" Value="Lime"/>
+                    <Setter Property="Foreground" Value="White"/>
                     <Setter Property="Tag" Value="#7071f0"/>
                     <Setter Property="Background">
                         <Setter.Value>
                             <LinearGradientBrush StartPoint="0,0.3" EndPoint="1,0.3">
-                                <GradientStop Color="HotPink" Offset="0"/>
-                                <GradientStop Color="Turquoise" Offset="3"/>
+                                <GradientStop Color="OrangeRed" Offset="0"/>
+                                <GradientStop Color="#FFF4CB54" Offset="2"/>
                             </LinearGradientBrush>
                         </Setter.Value>
                     </Setter>
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="Button">
-                                <Border Background="{TemplateBinding Background}" BorderBrush="PeachPuff" BorderThickness="4 0 0 0">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="OrangeRed" BorderThickness="4 0 0 0">
                                     <ContentPresenter HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
                                 </Border>
                             </ControlTemplate>
@@ -72,12 +72,12 @@
             <Setter Property="Background">
                 <Setter.Value>
                     <LinearGradientBrush StartPoint="0,0.3" EndPoint="1,0.3">
-                        <GradientStop Color="HotPink" Offset="0"/>
-                        <GradientStop Color="Turquoise" Offset="3"/>
+                        <GradientStop Color="OrangeRed" Offset="0"/>
+                        <GradientStop Color="#FFF4CB54" Offset="2"/>
                     </LinearGradientBrush>
                 </Setter.Value>
             </Setter>
-            <Setter Property="Foreground" Value="Fuchsia"/>
+            <Setter Property="Foreground" Value="#FFE0E3ED"/>
             <Setter Property="Margin" Value="0 0 0 5"/>
             <Setter Property="Height" Value="45"/>
             <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
@@ -85,7 +85,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" BorderBrush="Firebrick" BorderThickness="4 0 0 0">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="OrangeRed" BorderThickness="4 0 0 0">
                             <ContentPresenter HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
@@ -97,7 +97,7 @@
 
         <Style x:Key="topMenuButton" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="Foreground" Value="DarkViolet"/>
+            <Setter Property="Foreground" Value="#FFC6D7EF"/>
             <Setter Property="Margin" Value="5 0 0 0"/>
             <Setter Property="Height" Value="30"/>
             <Setter Property="Width" Value="80"/>
@@ -115,8 +115,8 @@
 
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Foreground" Value="DarkCyan"/>
-                    <Setter Property="Background" Value="Lime"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="Background" Value="OrangeRed"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -128,7 +128,7 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
         <Style x:Key="titleIcon" TargetType="fa:IconImage">
-            <Setter Property="Foreground" Value="MediumPurple"/>
+            <Setter Property="Foreground" Value="OrangeRed"/>
             <Setter Property="Width" Value="18"/>
             <Setter Property="Height" Value="18"/>
             <Setter Property="Margin" Value="0 3 0 0"/>
