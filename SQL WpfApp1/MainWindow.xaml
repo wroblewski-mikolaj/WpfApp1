@@ -32,7 +32,7 @@
                         <Border.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                                 <GradientStop Color="OrangeRed" Offset="0"/>
-                                <GradientStop Color="Black" Offset="0.53"/>
+                                <GradientStop Color="#FFF4CB54" Offset="1"/>
                             </LinearGradientBrush>
                         </Border.Background>
                         <TextBlock Text="MW" Foreground="White" FontSize="17" FontWeight="Bold"
@@ -40,35 +40,35 @@
                     </Border>
                     <StackPanel Margin="10 0 0 0" VerticalAlignment="Center">
                         <TextBlock Text="Mikolaj Wroblewski" Foreground="#FFC6D7EF" FontSize="16" Margin="1 1 0 1"/>
-                        <TextBlock Text="v1.31" Foreground="#FFC6D7EF" FontSize="12" Margin="1 -5 0 1"/>
+                        <TextBlock Text="v1.41" Foreground="#FFC6D7EF" FontSize="12" Margin="1 -5 0 1"/>
 
                     </StackPanel>
 
                 </StackPanel>
                 <Separator Height="0.2" Background="OrangeRed" Margin="20 30"/>
                 <!--Buttons-->
-                <Button Style="{StaticResource menuButtonActive}">
+                <Button Style="{StaticResource menuButtonActive}" Click="Button_Click">
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="Home" Style="{StaticResource MenuButtonIcon}"/>
-                        <TextBlock Text="Idk man" Style="{StaticResource MenuButtonText}"/>
+                        <TextBlock Text="History" Style="{StaticResource MenuButtonText}"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource menuButton}" Click="btnClickList">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="Search" Style="{StaticResource MenuButtonIcon}"/>
+                        <TextBlock Text="Access Data" Style="{StaticResource MenuButtonText}"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource menuButton}" Click="Button_Click_2">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="AddressCard" Style="{StaticResource MenuButtonIcon}"/>
+                        <TextBlock Text="Add New Product" Style="{StaticResource MenuButtonText}"/>
                     </StackPanel>
                 </Button>
                 <Button Style="{StaticResource menuButton}">
                     <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="Eye" Style="{StaticResource MenuButtonIcon}"/>
-                        <TextBlock Text="eye" Style="{StaticResource MenuButtonText}"/>
-                    </StackPanel>
-                </Button>
-                <Button Style="{StaticResource menuButton}">
-                    <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="Gem" Style="{StaticResource MenuButtonIcon}"/>
-                        <TextBlock Text="gem" Style="{StaticResource MenuButtonText}"/>
-                    </StackPanel>
-                </Button>
-                <Button Style="{StaticResource menuButton}">
-                    <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="Cubes" Style="{StaticResource MenuButtonIcon}"/>
-                        <TextBlock Text="cubes" Style="{StaticResource MenuButtonText}"/>
+                        <fa:IconImage Icon="QuestionCircle" Style="{StaticResource MenuButtonIcon}"/>
+                        <TextBlock Text="More Info" Style="{StaticResource MenuButtonText}"/>
                     </StackPanel>
                 </Button>
             </StackPanel>
@@ -91,10 +91,10 @@
                 <!--TOP menu-->
 
                 <StackPanel Margin="0 0 30 20" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-                    <Button Content="Eat my shorts" Style="{StaticResource topMenuButton}"/>
-                    <Button Content="Day" Style="{StaticResource topMenuButton}" Background="#FF332621" Foreground="#FFC6D7EF"/>
-                    <Button Content="month" Style="{StaticResource topMenuButton}"/>
-                    <Button Content="year" Style="{StaticResource topMenuButton}"/>
+                    <Button Content="Good day!" Style="{StaticResource topMenuButton}"/>
+                    <Button Content="{Binding Path=dayDate}" Style="{StaticResource topMenuButton}" Background="#FF332621" Foreground="#FFC6D7EF"/>
+                    <Button Content="{Binding Path=monthDate}" Style="{StaticResource topMenuButton}" Click="Button_Click_1"/>
+                    <Button Content="{Binding Path=yearDate}" Style="{StaticResource topMenuButton}"/>
                 </StackPanel>
 
                 <!--Title-->
@@ -108,9 +108,9 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <uc:InfoUser Grid.Column="0" Title="Total Views" Number="548,654" Icon="Eye" Background1="#FF090909" Background2="#FF748193" EllipseBackground1="#FFF4CB54" EllipseBackground2="OrangeRed" Foreground="Black"/>
-                    <uc:InfoUser Grid.Column="1" Title="Total orders" Number="548,654" Icon="Dragon" Background1="#FF090909" Background2="#FF748193" EllipseBackground1="#FFF4CB54" EllipseBackground2="OrangeRed"/>
-                    <uc:InfoUser Grid.Column="2" Title="Total revs" Number="548,654" Icon="GolfBall" Background1="#FF090909" Background2="#FF748193" EllipseBackground1="#FFF4CB54" EllipseBackground2="OrangeRed"/>
+                    <uc:InfoUser Grid.Column="0" Title="Products total" Number="{Binding Path=productsTotal}" Icon="Dropbox" Background1="#FF090909" Background2="#FF748193" EllipseBackground1="#FFF4CB54" EllipseBackground2="OrangeRed" Foreground="Black" Loaded="InfoUser_Loaded_1"/>
+                    <uc:InfoUser Grid.Column="1" Title="Orders this month" Number="548" Icon="MoneyBillWave" Background1="#FF090909" Background2="#FF748193" EllipseBackground1="#FFF4CB54" EllipseBackground2="OrangeRed" Loaded="InfoUser_Loaded" Foreground="Black"/>
+                    <uc:InfoUser Grid.Column="2" Title="Changes this month" Number="523,112" Icon="ExchangeAlt" Background1="#FF090909" Background2="#FF748193" EllipseBackground1="#FFF4CB54" EllipseBackground2="OrangeRed"/>
 
                 </Grid>
 
@@ -124,26 +124,9 @@
                     </Border>
 
                     <Border Grid.Column="1" CornerRadius="20" Padding="0 25" Background="#FF748193" Margin="15 0 47 40">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <StackPanel Orientation="Horizontal" Margin="20 0 0 15">
-                                <fa:IconImage Icon="Circle" Style="{StaticResource titleIcon}"/>
-                                <TextBlock Text="Last Orders" Style="{StaticResource titleText}"/>
-                            </StackPanel>
-
-                            <!--Orders-->
-                            <StackPanel Grid.Row="1">
-                                <uc:Order Title="Good doggo how how" Desc="Jonny b good" Icon="Dog"/>
-                                <uc:Order Title="Good doggo how how" Desc="Jonny b good" Icon="Calculator"/>
-                                <uc:Order Title="Good doggo how how" Desc="Jonny b good" Icon="Dog"/>
-                                <uc:Order Title="Good doggo how how" Desc="Jonny b good" Icon="Dog"/>
-                                <uc:Order Title="Good doggo how how" Desc="Jonny b good" Icon="Dog"/>
-                            </StackPanel>
-
-
+                        <Grid >
+                            <Frame x:Name="Window" NavigationUIVisibility="Hidden"/>
+                            
                         </Grid>
 
                     </Border>
