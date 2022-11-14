@@ -19,11 +19,11 @@ namespace SQL_WpfApp1.SQL
             SqlConnection myConn = new SqlConnection("Server=localhost;Integrated security=SSPI;database=master");
 
             str = "CREATE DATABASE InvDatabase2 ON PRIMARY " +
-                "(NAME = InvDatabase, " +
-                "FILENAME = 'e:\\InvDatabase2.mdf', " +
+                "(NAME = InvDatabase2, " +
+                "FILENAME = 'c:\\InvDatabase2.mdf', " +
                 "SIZE = 2MB, MAXSIZE = 10MB, FILEGROWTH = 10%)" +
                 "LOG ON (NAME = InvDatabase2_Log, " +
-                "FILENAME = 'e:\\InvDatabase2.ldf', " +
+                "FILENAME = 'c:\\InvDatabase2.ldf', " +
                 "SIZE = 1MB, " +
                 "MAXSIZE = 5MB, " +
                 "FILEGROWTH = 10%)";

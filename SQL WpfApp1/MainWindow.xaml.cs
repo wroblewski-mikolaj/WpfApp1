@@ -33,6 +33,7 @@ namespace SQL_WpfApp1
             InitializeComponent();
             Window.Content = new Page2();
             DataContext = this;
+            PreviewKeyDown += new KeyEventHandler(HandleEsc);
         }
         public int yearDate
         {
@@ -53,6 +54,11 @@ namespace SQL_WpfApp1
         {
             get { return _productsTotal; }
             set { _productsTotal = value; }
+        }
+        private void HandleEsc(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+                Close();
         }
 
         private void Border_MouseDown(object sender, RoutedEventArgs e)
